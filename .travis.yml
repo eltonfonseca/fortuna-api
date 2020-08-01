@@ -4,22 +4,17 @@ services:
   - postgresql
 
 stages:
-  - build
-  - quality
   - test
 
 before_install:
-  - psql -c 'create database travis_ci_test;' -U postgres
   - cp config/database.travis.yml config/database.yml
 
 install:
   - bundle install
+  - rails db:create db:migrate
 
 jobs:
   include:
-    - stage: build
-      script: rails db:create db:migrate
-    - stage: quality
-      script: rubocop
     - stage: test
+      script: rubocop
       script: rspec

@@ -2,6 +2,7 @@
 
 require 'factory_bot'
 require 'simplecov'
+require 'codecov'
 
 SimpleCov.start 'rails' do
   add_filter '/app/models/application_record.rb'
@@ -14,6 +15,7 @@ SimpleCov.start 'rails' do
 end
 
 SimpleCov.minimum_coverage 70
+SimpleCov.formatter = SimpleCov::Formatter::Codecov
 
 RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
