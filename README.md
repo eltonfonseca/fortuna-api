@@ -3,6 +3,9 @@
 # FORTUNA API
 > Project for family financial control
 
+[![Build Status](https://travis-ci.com/eltonfonseca/fortuna-api.svg?branch=master)](https://travis-ci.com/eltonfonseca/fortuna-api) [![codecov](https://codecov.io/gh/eltonfonseca/fortuna-api/branch/master/graph/badge.svg)](https://codecov.io/gh/eltonfonseca/fortuna-api)
+
+
 This project aims to manage the finances of a family, with greater control and visualization of accounts payable and accounts receivable.
 
 ## Stack
