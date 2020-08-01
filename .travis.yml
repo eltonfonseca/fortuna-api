@@ -1,6 +1,7 @@
 language: ruby
 
 stages:
+  - build
   - quality
   - test
 
