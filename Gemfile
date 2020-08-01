@@ -13,7 +13,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development do
   gem 'listen', '~> 3.2'
-  gem 'rubocop', '~> 0.88.0'
+  gem 'rubocop', '~> 0.88.0', require: false
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
@@ -24,4 +24,9 @@ group :development, :test do
   gem 'pry', '~> 0.12.2'
   gem 'pry-rails'
   gem 'rspec-rails', '~> 4.0.1'
+end
+
+group :test do
+  gem 'shoulda-matchers', '~> 4.0'
+  gem 'simplecov', require: false
 end
