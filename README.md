@@ -1,24 +1,40 @@
-# README
+<img src="https://i.imgur.com/xAkoVOd.png" align="right" width="100" height="110" />
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# FORTUNA API
+> Project for family financial control
 
-Things you may want to cover:
+This project aims to manage the finances of a family, with greater control and visualization of accounts payable and accounts receivable.
 
-* Ruby version
+## Stack
 
-* System dependencies
+* `Ruby 2.7.1`
+* `Rails 6.0.3.2`
 
-* Configuration
+## Development Setup
 
-* Database creation
+We use Docker and Ruby on Rails as technologies for developing this application. Therefore, follow the steps for setting up the development environment.
 
-* Database initialization
+#### Application Setup
 
-* How to run the test suite
+```bash
+$ docker-compose build
+$ docker-compose up
+```
+#### Database Setup
 
-* Services (job queues, cache servers, search engines, etc.)
+NOTE: Application must is up!
 
-* Deployment instructions
+```bash
+$ docker-compose exec fortuna rails db:create db:migrate
+```
 
-* ...
+## Contributing
+
+1. Fork it (<https://github.com/eltonfonseca/fortuna-api/fork>)
+2. Create your feature branch (`git checkout -b feature/fooBar`)
+3. Commit your changes (`git commit -am 'Add some fooBar'`)
+4. Push to the branch (`git push origin feature/fooBar`)
+5. Create a new Pull Request
+
+## License
+[MIT](https://github.com/eltonfonseca/fortuna-api/blob/master/LICENSE)
