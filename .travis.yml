@@ -13,7 +13,8 @@ stages:
   - test
 
 before_install:
-- docker pull eltonfonseca/fortuna:1.0.0
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker pull "$DOCKER_USERNAME"/fortuna:1.0.0
 
 install:
   - docker run fortuna bundle install
