@@ -1,26 +1,18 @@
 sudo: true
 language: ruby
 
-services:
-  - docker
-  - postgresql
-
 stages:
-  - build
   - quality
   - test
 
 install:
-  - docker-compose build
-  - docker-compose up -d
+  - bundle install
 
 jobs:
   include:
     - stage: build
-      script:
-        - docker-compose exec fortuna bundle install
-        - docker-compose exec fortuna rails db:create db:migrate
+      script: bundle exec rails db:create db:migrate
     - stage: quality
-      script: docker-compose exec fortuna rubocop
+      script: bundle exec rubocop
     - stage: test
-      script: docker-compose exec fortuna rspec
+      script: bundle exec rspec
