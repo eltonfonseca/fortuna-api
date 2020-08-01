@@ -6,20 +6,21 @@ services:
   - postgres
 
 stages:
+  - build
   - quality
   - test
 
-before_install:
-  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
-  - docker pull $DOCKER_USERNAME/fortuna:1.0.0
-
 install:
-  - docker run fortuna bundle install
-  - docker run fortuna rails db:create db:migrate
+  - docker-compose build
+  - docker-compose up
 
 jobs:
   include:
+    - stage: build
+      script:
+        - docker-compose exec fortuna bundle install
+        - docker-compose exec fortuna rails db:create db:migrate
     - stage: quality
-      script: docker run fortuna rubocop
+      script: docker-compose exec fortuna rubocop
     - stage: test
-      script: docker run fortuna rspec
+      script: docker-compose exec fortuna rspec
