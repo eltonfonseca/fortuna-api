@@ -1,20 +1,17 @@
+sudo: true
 language: ruby
 
 services:
   - docker
   - postgres
 
-env:
-  - POSTGRES_USER=pguser
-  - POSTGRES_PASSWORD=postgres
-
 stages:
   - quality
   - test
 
 before_install:
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker pull "$DOCKER_USERNAME"/fortuna:1.0.0
+  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+  - docker pull $DOCKER_USERNAME/fortuna:1.0.0
 
 install:
   - docker run fortuna bundle install
