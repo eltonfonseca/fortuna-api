@@ -1,0 +1,20 @@
+language: ruby
+
+services:
+  - postgresql
+
+stages:
+  - test
+
+before_install:
+  - cp config/database.travis.yml config/database.yml
+
+install:
+  - bundle install
+  - rails db:create db:migrate
+
+jobs:
+  include:
+    - stage: test
+      script: rubocop
+      script: rspec
