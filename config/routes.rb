@@ -1,3 +1,20 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  devise_for :users, skip: :all
+  devise_scope :user do
+    patch '/api/v1/password', to: 'devise/passwords#update'
+    put '/api/v1/password', to: 'devise/passwords#update'
+    post '/api/v1/password', to: 'devise/passwords#create'
+
+    namespace :api, defaults: { format: :json } do
+      namespace :v1 do
+        post 'login', to: 'users/sessions#create'
+        delete 'logout', to: 'users/sessions#destroy'
+        
+        patch 'signup', to: 'users/registrations#update'
+        put 'signup', to: 'users/registrations#update'
+        delete 'signup', to: 'users/registrations#destroy'
+        post 'signup', to: 'users/registrations#create'
+      end
+    end
+  end
 end
