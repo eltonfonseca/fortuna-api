@@ -15,7 +15,7 @@ SimpleCov.start 'rails' do
 end
 
 SimpleCov.minimum_coverage 70
-SimpleCov.formatter = SimpleCov::Formatter::Codecov
+SimpleCov.formatter = SimpleCov::Formatter::Codecov if ENV.fetch('CI') == 'true'
 
 RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
