@@ -6,6 +6,6 @@ class Api::V1::ApiController < ApplicationController
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: %i[name last_name])
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[name last_name role])
   end
 end
