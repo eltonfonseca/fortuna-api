@@ -34,6 +34,7 @@ module Fortuna
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
     config.generators do |generators|
+      generators.test_framework :rspec
       generators.orm :active_record, primary_key_type: :uuid
     end
   end
