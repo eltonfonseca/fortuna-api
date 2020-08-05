@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'POST /signup', type: :request do
@@ -20,7 +22,15 @@ RSpec.describe 'POST /signup', type: :request do
     end
 
     it 'returns a new user' do
-      expect(User.count). to eq(1)
+      expect(User.count).to eq(1)
+    end
+
+    it 'returns a user name' do
+      expect(User.last.name).to eq(params[:user][:name])
+    end
+
+    it 'returns a user name' do
+      expect(User.last.last_name).to eq(params[:user][:last_name])
     end
   end
 
