@@ -10,6 +10,12 @@ services:
       - '5432:5432'
     volumes:
       - ./tmp/postgres:/var/lib/postgresql/data,delegated
+  
+  mailcatcher:
+    image: schickling/mailcatcher
+    ports:
+      - '1025:1025'
+      - '1080:1080'
 
   fortuna:
     build: .
@@ -26,3 +32,4 @@ services:
       - '80:3000'
     depends_on:
       - postgres
+      - mailcatcher
