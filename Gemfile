@@ -17,6 +17,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development do
   gem 'listen', '~> 3.2'
+  gem 'mailcatcher'
   gem 'rubocop', '~> 0.88.0', require: false
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
