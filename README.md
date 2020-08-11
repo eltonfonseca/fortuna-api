@@ -3,6 +3,7 @@
 # FORTUNA API
 > Project for family financial control
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5c72883a8f0a4189a327bc9e6746fe79)](https://app.codacy.com/manual/eltonfonseca/fortuna-api?utm_source=github.com&utm_medium=referral&utm_content=eltonfonseca/fortuna-api&utm_campaign=Badge_Grade_Dashboard)
 [![Build Status](https://travis-ci.com/eltonfonseca/fortuna-api.svg?branch=master)](https://travis-ci.com/eltonfonseca/fortuna-api) [![codecov](https://codecov.io/gh/eltonfonseca/fortuna-api/branch/master/graph/badge.svg)](https://codecov.io/gh/eltonfonseca/fortuna-api) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 
