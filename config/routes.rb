@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
     namespace :api, defaults: { format: :json } do
       namespace :v1 do
+        get 'confirmation', to: 'users/confirmations#show'
         post 'login', to: 'users/sessions#create'
         delete 'logout', to: 'users/sessions#destroy'
         
