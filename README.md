@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/1ryC1eb.png" align="right" width="200" height="150" />
+<img src="https://i.imgur.com/1ryC1eb.png" align="right" width="150" height="150" />
 
 # FORTUNA API
 > Project for family financial control
