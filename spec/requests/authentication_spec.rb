@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 def decoded_jwt_token_from_response(response)
-  token = response.headers['Authorization'].split(' ').last
+  token = response.headers['Authorization'].split.last
   JWT.decode(token, ENV['SECRET_KEY'], true)
 end
 

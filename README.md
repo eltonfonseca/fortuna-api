@@ -11,8 +11,8 @@ This project aims to manage the finances of a family, with greater control and v
 
 ## Stack
 
-* `Ruby 2.7.1`
-* `Rails 6.0.3.2`
+* `Ruby 3.0.0`
+* `Rails 6.1.3.1`
 
 ## Development Setup
 
