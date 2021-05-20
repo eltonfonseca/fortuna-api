@@ -10,7 +10,7 @@ gem 'devise'
 gem 'devise-jwt'
 gem 'fast_jsonapi'
 gem 'pg', '>= 0.18', '< 2.0'
-gem 'puma', '~> 4.1'
+gem 'puma', '~> 4.3'
 gem 'rack-cors'
 gem 'rails', '~> 6.1.3.1'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
