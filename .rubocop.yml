@@ -1,6 +1,5 @@
 AllCops:
-  TargetRubyVersion: 3.0
-  NewCops: enable
+  TargetRubyVersion: 3.0.2
   Exclude:
     - 'app/channels/application_cable/**/*'
     - 'bin/**/*'
