@@ -1,0 +1,47 @@
+name: Fortuna CI
+
+on: [push]
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    env:
+      RAILS_ENV: test
+      DATABASE_URL: postgresql://pguser:pgpass@localhost/fortuna_test
+      SECRET_KEY: 72e78abc11656ac8de91661902f6e3fcac2b2d9fc8d63d8781d63a7bd72d15b7479ce6a54a079a574eb30ac9e90eacc75fc7f99dbe81b7fdfb30030bab771920
+
+    services:
+      db:
+        image: postgres
+        ports: ['5432:5432']
+        env:
+          POSTGRES_DB: fortuna_test
+          POSTGRES_USER: pguser
+          POSTGRES_PASSWORD: pgpass
+      
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.0.2'
+      
+      - name: Build Dependencies
+        run: |
+          date
+          sudo apt-get -yqq install libpq-dev
+          gem update --system
+          gem install rake -v 13.0.1
+          gem install bundler -v "~>2.0"
+          bundle install
+      
+      - name: Static Linter (rubocop)
+        run: |
+          bundle exec rubocop --format json -o report.json
+      
+      - name: Run Tests (rspec)
+        run: |
+          bundle exec rails db:create db:migrate
+          bundle exec rspec --fail-fast

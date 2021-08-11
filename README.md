@@ -4,15 +4,15 @@
 > Project for family financial control
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/5c72883a8f0a4189a327bc9e6746fe79)](https://app.codacy.com/manual/eltonfonseca/fortuna-api?utm_source=github.com&utm_medium=referral&utm_content=eltonfonseca/fortuna-api&utm_campaign=Badge_Grade_Dashboard)
-[![Build Status](https://travis-ci.com/eltonfonseca/fortuna-api.svg?branch=master)](https://travis-ci.com/eltonfonseca/fortuna-api) [![codecov](https://codecov.io/gh/eltonfonseca/fortuna-api/branch/master/graph/badge.svg)](https://codecov.io/gh/eltonfonseca/fortuna-api) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+![fortuna workflow](https://github.com/eltonfonseca/fortuna-api/actions/workflows/app.yml/badge.svg) [![codecov](https://codecov.io/gh/eltonfonseca/fortuna-api/branch/master/graph/badge.svg)](https://codecov.io/gh/eltonfonseca/fortuna-api) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 
 This project aims to manage the finances of a family, with greater control and visualization of accounts payable and accounts receivable.
 
 ## Stack
 
-* `Ruby 3.0.0`
-* `Rails 6.1.3.1`
+* `Ruby 3.0.2`
+* `Rails 6.1.4`
 
 ## Development Setup
 

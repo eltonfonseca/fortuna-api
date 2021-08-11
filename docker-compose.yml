@@ -5,7 +5,7 @@ services:
     image: postgres:12.3-alpine
     environment:
       POSTGRES_USER: pguser
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_PASSWORD: pgpass
     ports:
       - 5432:5432
   
@@ -20,14 +20,14 @@ services:
     stdin_open: true
     tty: true
     environment:
-      DATABASE_URL: postgres://pguser:postgres@postgres
+      DATABASE_URL: postgres://pguser:pgpass@postgres
       TIME_ZONE: 'Brasilia'
       SECRET_KEY: '72e78abc11656ac8de91661902f6e3fcac2b2d9fc8d63d8781d63a7bd72d15b7479ce6a54a079a574eb30ac9e90eacc75fc7f99dbe81b7fdfb30030bab771920'
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     volumes:
       - .:/opt/fortuna
     ports:
-      - '80:3000'
+      - 80:3000
     depends_on:
       - postgres
       - mailcatcher
