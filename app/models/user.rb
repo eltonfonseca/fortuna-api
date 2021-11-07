@@ -1,20 +1,14 @@
-# frozen_string_literal: true
-
 class User < ApplicationRecord
+  has_secure_password
+
   enum role: %i[user vip admin]
 
   after_initialize :set_default_role, if: :new_record?
 
-  devise :confirmable,
-         :database_authenticatable,
-         :registerable,
-         :recoverable,
-         :rememberable,
-         :validatable,
-         :jwt_authenticatable,
-         jwt_revocation_strategy: JwtBlacklist
-
-  validates_presence_of :name
+  validates :email, presence: true, uniqueness: true
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :name, :last_name, presence: true
+  validates :password, length: { minimum: 6 }
 
   private
 
