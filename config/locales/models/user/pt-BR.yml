@@ -1,0 +1,18 @@
+pt-BR:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "E-mail não pode ser em branco"
+              taken: "E-mail já existe"
+              invalid: "E-mail inválido"
+            password:
+              blank: "Senha não pode ser em branco"
+              too_short: "Senha deve ter no mínimo 6 caracteres"
+            name:
+              blank: "Nome não pode ser em branco"
+            last_name:
+              blank: "Sobrenome não pode ser em branco"
+
