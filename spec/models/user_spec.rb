@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
@@ -28,8 +30,8 @@ RSpec.describe User, type: :model do
   %i[admin vip].each do |role|
     context "when user is #{role}" do
       let(:user) { build :user, role }
-  
-      it "returns role #{role.to_s}" do
+
+      it "returns role #{role}" do
         expect(user.role).to eq role.to_s
       end
     end
@@ -38,7 +40,7 @@ RSpec.describe User, type: :model do
   context 'when user not specify role' do
     let(:user) { build :user }
 
-    it 'returns default role' do      
+    it 'returns default role' do
       expect(user.user?).to be_truthy
     end
   end
